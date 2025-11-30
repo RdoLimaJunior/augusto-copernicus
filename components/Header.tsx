@@ -15,13 +15,13 @@ export const Header: React.FC = () => {
           <nav className="hidden md:flex items-center gap-6">
             <a 
               href="#sobre" 
-              className="text-white/90 hover:text-baturite-yellow font-medium text-sm transition-all duration-300 hover:-translate-y-1 inline-block"
+              className="text-white/90 font-medium text-sm transition-all duration-200 hover:text-baturite-yellow hover:translate-y-1 inline-block"
             >
               A História
             </a>
             <a 
               href="#financeiro" 
-              className="text-white/90 hover:text-baturite-yellow font-medium text-sm transition-all duration-300 hover:-translate-y-1 inline-block"
+              className="text-white/90 font-medium text-sm transition-all duration-200 hover:text-baturite-yellow hover:translate-y-1 inline-block"
             >
               Transparência
             </a>
