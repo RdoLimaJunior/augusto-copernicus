@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
+import { NewsSection } from './components/NewsSection';
 import { DonationSection } from './components/DonationSection';
 import { Financials } from './components/Financials';
 import { VideoSection } from './components/VideoSection';
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         <Financials />
         <VideoSection />
         <ROI />
+        <NewsSection />
       </main>
       <Footer />
       <FloatingButton />

@@ -7,7 +7,7 @@ export const About: React.FC = () => {
 
   const handleShare = async () => {
     const shareData = {
-      title: 'Baturité na NASA 🚀',
+      title: 'Baturité na Copernicus 🚀',
       text: 'Ajude o Augusto a representar o Brasil na Copernicus Olympiad em Houston!',
       url: window.location.href
     };

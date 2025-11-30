@@ -4,14 +4,14 @@ import { FadeInSection } from './FadeInSection';
 
 const StatCard: React.FC<StatCardProps> = ({ label, value, type }) => {
   const styles = {
-    neutral: "bg-white border-baturite-blue text-baturite-blue",
+    neutral: "bg-white border-baturite-blue/20 text-baturite-blue",
     success: "bg-green-50 border-green-200 text-status-green",
     danger: "bg-red-50 border-red-200 text-status-red"
   };
 
   return (
-    <div className={`p-6 rounded-xl border-2 shadow-sm flex flex-col items-center justify-center text-center ${styles[type]}`}>
-      <span className="text-sm uppercase font-bold tracking-wider mb-2 opacity-80">{label}</span>
+    <div className={`p-6 rounded-xl border shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center justify-center text-center ${styles[type]}`}>
+      <span className="text-sm uppercase font-bold tracking-wider mb-2 opacity-70">{label}</span>
       <span className="text-2xl md:text-3xl font-extrabold">{value}</span>
     </div>
   );
@@ -50,27 +50,28 @@ export const Financials: React.FC = () => {
               <table className="w-full text-left border-collapse">
                 <thead className="bg-baturite-blue text-white">
                   <tr>
-                    <th className="px-6 py-4 font-semibold text-sm uppercase">Categoria</th>
-                    <th className="px-6 py-4 font-semibold text-sm uppercase">Item</th>
-                    <th className="px-6 py-4 font-semibold text-sm uppercase">Valor Estimado</th>
-                    <th className="px-6 py-4 font-semibold text-sm uppercase text-center">Status</th>
+                    <th className="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Categoria</th>
+                    <th className="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Item</th>
+                    <th className="px-6 py-4 font-semibold text-sm uppercase tracking-wider">Valor Estimado</th>
+                    <th className="px-6 py-4 font-semibold text-sm uppercase tracking-wider text-center">Status</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {items.map((row, idx) => (
                     <tr 
                       key={idx} 
-                      className="group transition-all duration-300 hover:bg-blue-50 border-l-4 border-transparent hover:border-baturite-blue hover:shadow-sm"
+                      className={`group transition-all duration-300 border-l-4 border-transparent hover:border-baturite-blue hover:shadow-md ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-blue-50/50`}
                     >
                       <td className="px-6 py-4 text-gray-600 font-medium group-hover:text-baturite-blue transition-colors">{row.category}</td>
                       <td className="px-6 py-4 text-gray-800">{row.item}</td>
-                      <td className="px-6 py-4 text-gray-800 font-bold">{row.value}</td>
+                      <td className="px-6 py-4 text-gray-800 font-bold whitespace-nowrap">{row.value}</td>
                       <td className="px-6 py-4 text-center">
-                        <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${
+                        <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold shadow-sm ${
                           row.status === 'Pago' 
-                            ? 'bg-green-100 text-green-700' 
-                            : 'bg-red-100 text-red-700'
+                            ? 'bg-green-100 text-green-700 border border-green-200' 
+                            : 'bg-red-100 text-red-700 border border-red-200'
                         }`}>
+                          <i className={`fa-solid ${row.status === 'Pago' ? 'fa-check' : 'fa-hourglass'}`}></i>
                           {row.status.toUpperCase()}
                         </span>
                       </td>
@@ -79,7 +80,7 @@ export const Financials: React.FC = () => {
                 </tbody>
               </table>
             </div>
-            <div className="p-4 bg-gray-50 text-xs text-gray-500 text-center border-t border-gray-100">
+            <div className="p-4 bg-gray-50 text-xs text-gray-500 text-center border-t border-gray-200">
               * Valores estimados com base na cotação do dólar atual e pesquisas de voos para Janeiro de 2026.
             </div>
           </div>

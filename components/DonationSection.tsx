@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FadeInSection } from './FadeInSection';
 
 export const DonationSection: React.FC = () => {
   const pixKey = "augustodepaulabezerra@gmail.com";
   // Gerando QR Code simples contendo a chave (texto)
   const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${pixKey}`;
+  
+  const [copyFeedback, setCopyFeedback] = useState("Copiar Chave");
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopyPix = () => {
+    navigator.clipboard.writeText(pixKey).then(() => {
+      setCopyFeedback("Copiado!");
+      setIsCopied(true);
+      setTimeout(() => {
+        setCopyFeedback("Copiar Chave");
+        setIsCopied(false);
+      }, 3000);
+    });
+  };
 
   return (
     <section id="doacao" className="py-16 bg-white relative overflow-hidden">
@@ -29,7 +43,7 @@ export const DonationSection: React.FC = () => {
               
               <h3 className="text-xl font-bold mb-6 relative z-10">Escaneie para Apoiar</h3>
               
-              <div className="bg-white p-4 rounded-xl shadow-lg mb-6 relative z-10 transform transition-transform hover:scale-105">
+              <div className="bg-white p-4 rounded-xl shadow-lg mb-6 relative z-10 transform transition-transform hover:scale-105 duration-300">
                 <img 
                   src={qrCodeUrl} 
                   alt="QR Code Pix" 
@@ -37,8 +51,8 @@ export const DonationSection: React.FC = () => {
                 />
               </div>
               
-              <p className="text-sm text-blue-100 relative z-10">
-                <i className="fa-solid fa-mobile-screen-button mr-2"></i>
+              <p className="text-sm text-blue-100 relative z-10 flex items-center justify-center gap-2">
+                <i className="fa-solid fa-mobile-screen-button"></i>
                 Abra o app do seu banco
               </p>
             </div>
@@ -49,17 +63,32 @@ export const DonationSection: React.FC = () => {
                 <label className="block text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">
                   Chave Pix (E-mail)
                 </label>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <div className="flex-grow bg-white border-2 border-gray-200 text-gray-800 text-lg font-mono font-bold p-4 rounded-lg break-all flex items-center">
+                
+                <div className="flex flex-col sm:flex-row gap-3 items-stretch">
+                  <div className="flex-grow bg-white border-2 border-gray-200 text-gray-800 text-base md:text-lg font-mono font-bold p-4 rounded-lg break-all flex items-center select-all">
                     {pixKey}
                   </div>
+                  
+                  <button 
+                    onClick={handleCopyPix}
+                    className={`px-6 py-3 rounded-lg font-bold transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap shadow-sm ${
+                      isCopied 
+                        ? "bg-green-500 text-white border-green-500" 
+                        : "bg-baturite-yellow text-baturite-blue hover:bg-yellow-400"
+                    }`}
+                  >
+                    <i className={`fa-solid ${isCopied ? "fa-check" : "fa-copy"}`}></i>
+                    {copyFeedback}
+                  </button>
                 </div>
-                <p className="text-xs text-gray-400 mt-2">
-                  * Confira os dados antes de confirmar: Augusto de Paula Bezerra
+                
+                <p className="text-xs text-gray-400 mt-3 flex items-center gap-1">
+                  <i className="fa-solid fa-circle-info"></i>
+                  Confira os dados: Augusto de Paula Bezerra
                 </p>
               </div>
 
-              <div className="bg-yellow-50 border-l-4 border-baturite-yellow p-4 rounded-r-lg">
+              <div className="bg-yellow-50 border-l-4 border-baturite-yellow p-4 rounded-r-lg shadow-sm">
                 <div className="flex items-start">
                   <i className="fa-solid fa-heart text-baturite-yellow mt-1 mr-3 text-xl"></i>
                   <div>
