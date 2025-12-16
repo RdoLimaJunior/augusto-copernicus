@@ -4,13 +4,22 @@ import { FadeInSection } from './FadeInSection';
 export const NewsSection: React.FC = () => {
   const newsItems = [
     {
+      id: 0,
+      source: "Diário do Nordeste",
+      date: "Matéria Recente",
+      title: "Criança superdotada do CE se classifica em olimpíada nos EUA e família faz vaquinha para viagem",
+      description: "Augusto, de 7 anos, conquistou vaga para a etapa global da Copernicus Olympiad no Texas. Família busca apoio para custear a viagem.",
+      link: "https://diariodonordeste.verdesmares.com.br/ceara/crianca-superdotada-do-ce-se-classifica-em-olimpiada-nos-eua-e-familia-faz-vaquinha-para-viagem-1.3714210",
+      image: "imagem/augusto.jpg"
+    },
+    {
       id: 1,
       source: "Diário do Nordeste",
       date: "Especial Superdotados",
       title: "Superdotados e solitários: crianças com altas habilidades enfrentam árdua busca por inclusão",
       description: "Reportagem especial que discute os desafios e o imenso potencial de crianças com altas habilidades no Ceará, contextualizando a jornada educacional de alunos como Augusto.",
       link: "https://diariodonordeste.verdesmares.com.br/ceara/superdotados-e-solitarios-criancas-com-altas-habilidades-enfrentam-ardua-busca-por-inclusao-escolar-1.3290690/especial-superdotados-do-cear%C3%A1-1.3290740",
-      image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop" // Imagem ilustrativa de jornalismo/notícia
+      image: "imagem/augusto.jpg"
     },
     {
       id: 2,
@@ -19,7 +28,7 @@ export const NewsSection: React.FC = () => {
       title: "Especial Superdotados do Ceará: O desafio da identificação",
       description: "Matéria aprofundada sobre o cenário da superdotação no estado, destacando histórias de superação e a importância do apoio familiar e escolar.",
       link: "https://diariodonordeste.verdesmares.com.br/ceara/superdotados-e-solitarios-criancas-com-altas-habilidades-enfrentam-ardua-busca-por-inclusao-escolar-1.3290690/especial-superdotados-do-cear%C3%A1-1.3290740",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop" // Imagem ilustrativa educação
+      image: "imagem/augusto.jpg"
     }
   ];
 

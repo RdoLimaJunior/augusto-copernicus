@@ -4,19 +4,19 @@ import { FadeInSection } from './FadeInSection';
 export const ROI: React.FC = () => {
   const cards = [
     {
-      icon: "fa-flag",
-      title: "Marco Inédito na História",
-      description: "Pela primeira vez, um aluno da rede municipal levará a bandeira de Baturité para uma competição científica na NASA. Estamos colocando nossa cidade no mapa da ciência mundial!"
+      icon: "fa-earth-americas",
+      title: "Um Marco Histórico",
+      description: "Pela primeira vez na história, Baturité terá um representante em uma competição científica global na NASA. É o nome da nossa cidade sendo levado ao topo do mundo por um filho da terra."
     },
     {
-      icon: "fa-school",
-      title: "Vitória da Escola Pública",
-      description: "Essa conquista prova a excelência e o potencial da nossa educação municipal. É a confirmação de que, com apoio e dedicação, nossos alunos podem competir de igual para igual com o mundo."
+      icon: "fa-graduation-cap",
+      title: "Potência da Escola Pública",
+      description: "Augusto prova que a educação municipal de Baturité forma talentos de nível internacional. Apoiar este projeto é valorizar nossos professores, nossas escolas e o potencial de nossas crianças."
     },
     {
-      icon: "fa-door-open",
-      title: "Abrindo Portas para o Futuro",
-      description: "O Augusto é apenas o primeiro. Sua jornada servirá de farol para inspirar centenas de outras crianças de Baturité a acreditarem nos estudos e a sonharem cada vez mais alto."
+      icon: "fa-rocket",
+      title: "Abrindo Caminhos",
+      description: "Essa conquista não é só dele. Ela abre portas e mostra para cada estudante de Baturité que sonhos grandes são possíveis. Estamos criando um legado de inspiração para as próximas gerações."
     }
   ];
 
@@ -29,7 +29,7 @@ export const ROI: React.FC = () => {
               Por que Apoiar?
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Muito mais do que uma viagem, seu apoio constrói um legado para nossa comunidade.
+              Sua doação vai muito além da viagem: é um investimento no orgulho da nossa gente e no futuro da educação de Baturité.
             </p>
           </div>
           

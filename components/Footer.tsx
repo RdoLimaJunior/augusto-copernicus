@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-white mb-2">Redes Sociais</h4>
             <div className="flex justify-center gap-4">
-              <a href="https://www.instagram.com/reel/DRfF7fMEUIl/" target="_blank" rel="noopener noreferrer" className="hover:text-baturite-yellow transition-colors"><i className="fa-brands fa-instagram text-xl"></i></a>
+              <a href="https://www.instagram.com/augustodpb/" target="_blank" rel="noopener noreferrer" className="hover:text-baturite-yellow transition-colors" aria-label="Instagram"><i className="fa-brands fa-instagram text-xl"></i></a>
             </div>
           </div>
         </div>

@@ -4,14 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baturité na Copernicus - Apoie Agora</title>
-    <!-- Tailwind CSS (CDN mantido para simplicidade) -->
+    
+    <!-- Meta Tags SEO & Social -->
+    <meta name="description" content="Ajude o estudante Augusto a representar Baturité e o Brasil na Copernicus Olympiad na NASA (Houston, EUA). Apoie essa jornada de educação e ciência!" />
+    <meta property="og:title" content="Baturité na Copernicus - Ajude o Augusto a chegar na NASA!" />
+    <meta property="og:description" content="Augusto conquistou medalha de bronze e foi convidado para a etapa global em Houston. Sua doação faz esse sonho acontecer." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
     <script>
       tailwind.config = {
         theme: {
@@ -28,6 +40,7 @@
             },
             boxShadow: {
               'glow': '0 0 15px rgba(255, 204, 41, 0.5)',
+              'glow-red': '0 0 15px rgba(239, 68, 68, 0.4)',
             }
           }
         }
@@ -59,18 +72,18 @@
   <script type="importmap">
 {
   "imports": {
-    "vite": "https://aistudiocdn.com/vite@^7.2.4",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+    "vite": "https://aistudiocdn.com/vite@^5.0.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@18.2.0/",
+    "react/": "https://aistudiocdn.com/react@18.2.0/",
+    "react": "https://aistudiocdn.com/react@18.2.0",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^4.2.0"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
-    <!-- Ponto de entrada do App React -->
-    <script type="module" src="/index.tsx"></script>
+    <!-- Ponto de entrada do App React - Caminho relativo para garantir carregamento -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
